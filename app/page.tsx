@@ -15,14 +15,13 @@ import {
   Target,
   BarChart3,
   MessageCircle,
-  Settings,
   CheckCircle,
-  Mail,
   Twitter,
   Instagram,
   Facebook,
   Linkedin,
   Music,
+  ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
 
@@ -45,110 +44,113 @@ export default function Home() {
     <div className={`min-h-screen ${darkMode ? "dark" : ""}`}>
       <div className="bg-gradient-to-b from-orange-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 min-h-screen">
         {/* Header */}
-        <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              {/* Logo */}
-              <div className="flex items-center">
+        <header className="sticky top-0 md:top-10 z-50">
+          <div className=" bg-white/96 dark:bg-gray-900/80 backdrop-blur-md border-b md:rounded-[10px] border-gray-200 dark:border-gray-700 max-w-[1000px] m-auto">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex justify-between items-center h-[70px]">
+                {/* Logo */}
+                <div className="flex items-center">
                   <Image
                     src="/logo.png"
                     alt="Creator Cartel Logo"
                     width={60}
                     height={55}
                   />
-              </div>
+                </div>
 
-              {/* Desktop Navigation */}
-              <nav className="hidden md:flex space-x-8">
-                <a
-                  href="#"
-                  className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium"
-                >
-                  Home
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium"
-                >
-                  Features
-                </a>
-              </nav>
-
-              {/* Desktop CTA & Theme Toggle */}
-              <div className="hidden md:flex items-center space-x-4">
-                <Button className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100">
-                  Get Started
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={toggleDarkMode}
-                  className="text-gray-700 dark:text-gray-300"
-                >
-                  {darkMode ? (
-                    <Sun className="w-5 h-5" />
-                  ) : (
-                    <Moon className="w-5 h-5" />
-                  )}
-                </Button>
-              </div>
-
-              {/* Mobile Menu Button */}
-              <div className="md:hidden flex items-center space-x-2">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={toggleDarkMode}
-                  className="text-gray-700 dark:text-gray-300"
-                >
-                  {darkMode ? (
-                    <Sun className="w-5 h-5" />
-                  ) : (
-                    <Moon className="w-5 h-5" />
-                  )}
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={toggleMobileMenu}
-                  className="text-gray-700 dark:text-gray-300"
-                >
-                  {mobileMenuOpen ? (
-                    <X className="w-6 h-6" />
-                  ) : (
-                    <Menu className="w-6 h-6" />
-                  )}
-                </Button>
-              </div>
-            </div>
-
-            {/* Mobile Menu */}
-            {mobileMenuOpen && (
-              <div className="md:hidden py-4 h-dvh border-t border-gray-200 dark:border-gray-700">
-                <nav className="flex flex-col space-y-4">
+                {/* Desktop Navigation */}
+                <nav className="hidden md:flex space-x-8">
                   <a
                     href="#"
-                    className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium"
+                    className="text-gray-700  dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium"
                   >
                     Home
                   </a>
                   <a
                     href="#"
-                    className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium"
+                    className="text-gray-700 text-base dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium"
                   >
                     Features
                   </a>
-                  <Button className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 w-full mt-4">
-                    Get Started
-                  </Button>
                 </nav>
+
+                {/* Desktop CTA & Theme Toggle */}
+                <div className="hidden md:flex items-center space-x-4">
+                  <Button className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100">
+                    Get Started{" "}
+                    <ArrowRight size={15} strokeWidth={2.5} className="ml-1" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={toggleDarkMode}
+                    className="text-gray-700 cursor-pointer dark:text-gray-300"
+                  >
+                    {darkMode ? (
+                      <Sun className="w-5 h-5" />
+                    ) : (
+                      <Moon className="w-5 h-5" />
+                    )}
+                  </Button>
+                </div>
+
+                {/* Mobile Menu Button */}
+                <div className="md:hidden flex items-center space-x-2">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={toggleDarkMode}
+                    className="text-gray-700 dark:text-gray-300"
+                  >
+                    {darkMode ? (
+                      <Sun className="w-5 h-5" />
+                    ) : (
+                      <Moon className="w-5 h-5" />
+                    )}
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    onClick={toggleMobileMenu}
+                    className="text-gray-700 dark:text-gray-300"
+                  >
+                    {mobileMenuOpen ? (
+                      <X className="w-6 h-6" />
+                    ) : (
+                      <Menu className="w-6 h-6" />
+                    )}
+                  </Button>
+                </div>
               </div>
-            )}
+
+              {/* Mobile Menu */}
+              {mobileMenuOpen && (
+                <div className="md:hidden py-4 h-dvh border-t border-gray-200 dark:border-gray-700">
+                  <nav className="flex flex-col space-y-4">
+                    <a
+                      href="#"
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium"
+                    >
+                      Home
+                    </a>
+                    <a
+                      href="#"
+                      className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium"
+                    >
+                      Features
+                    </a>
+                    <Button className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 w-full mt-4">
+                      Get Started
+                    </Button>
+                  </nav>
+                </div>
+              )}
+            </div>
           </div>
         </header>
 
         {/* Hero Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="pb-20 pt-20 md:pt-32 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
               <Badge className="mb-6 bg-pink-200 text-pink-800 hover:bg-pink-300 px-4 py-2 text-sm font-medium">
@@ -167,7 +169,7 @@ export default function Home() {
                 IN NUMBERS.
               </h1>
 
-              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg md:text-xl text-gray-600 font-normal dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
                 Discover vital content insights, coordinate team schedules, and
                 streamline workflows with tools designed specifically for
                 content creators and their teams
@@ -176,14 +178,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
-                  className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 px-8 py-3 text-lg"
+                  className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 px-5 py-[18px] text-lg"
                 >
                   Join Open Beta Waitlist
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 px-8 py-3 text-lg"
+                  className="border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 ppx-5 py-[18px] text-lg"
                 >
                   See How It Works
                 </Button>
@@ -634,60 +636,52 @@ export default function Home() {
 
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="flex justify-center items-center gap-4 mb-8">
-                <Settings className="w-12 h-12 text-orange-400 animate-spin-slow" />
-                <Mail className="w-10 h-10 text-blue-400" />
-                <BarChart3 className="w-10 h-10 text-green-400" />
-                <Calendar className="w-8 h-8 text-purple-400" />
+          <div className="w-full text-center flex items-center justify-between flex-col md:flex-row gap-8">
+            <div className="flex mx-auto max-w-[600px] justify-center items-center md:items-start flex-col">
+              <div className="mb-8"></div>
+              <div className="text-orange-500 font-semibold text-sm uppercase tracking-wide mb-4">
+                COMING SOON!!!
               </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Join The Creator Movement
+              </h2>
+
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 text-left max-w-2xl">
+                Get early access to the tools that will redefine how you
+                discover, plan, and collaborate as a content creator or creator
+                team.
+              </p>
+
+              <form onSubmit={handleEmailSubmit} className="w-full">
+                <div className="flex flex-col items-center justify-center sm:flex-row w-full mb-8 max-w-[500px] border-[2px] bg-white dark:bg-transparent rounded-[10px]">
+                  <Input
+                    type="email"
+                    placeholder="johnDoe@example.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="bg-white dark:bg-gray-800 text-base w-full h- border-none shadow-none py-6 px-5 rounded-none rounded-l-[10px] text-gray-800 dark:text-white focus-visible:border-none focus-visible:ring-none focus-visible:ring-[0px]"
+                    required
+                  />
+                  <Button
+                    type="submit"
+                    className="bg-gray-900 cursor-pointer dark:bg-white text-white dark:text-gray-900 rounded-[10px] hover:bg-gray-800 dark:hover:bg-gray-100 px-6 py-6"
+                  >
+                    Join Waitlist
+                  </Button>
+                </div>
+              </form>
+
+              <p className="text-sm text-gray-500 dark:text-gray-400">
+                Strength In Creativity, Power In Numbers
+              </p>
             </div>
-
-            <div className="text-orange-500 font-semibold text-sm uppercase tracking-wide mb-2">
-              COMING SOON!!!
-            </div>
-
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Join The Creator Movement
-            </h2>
-
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              Get early access to the tools that will redefine how you discover,
-              plan, and collaborate as a content creator or creator team.
-            </p>
-
-            <form
-              onSubmit={handleEmailSubmit}
-              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto mb-8"
-            >
-              <Input
-                type="email"
-                placeholder="johnDoe@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 bg-white dark:bg-gray-800 border-gray-300 dark:border-gray-600"
-                required
+            <div className="mx-auto">
+              <Image
+                src="/box.png"
+                alt="content-box-image"
+                width={500}
+                height={0}
               />
-              <Button
-                type="submit"
-                className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 px-8"
-              >
-                Join Waitlist
-              </Button>
-            </form>
-
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Strength In Creativity, Power In Numbers
-            </p>
-
-            {/* Floating 3D Box Illustration */}
-            <div className="mt-12 relative">
-              <div className="w-64 h-64 mx-auto relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-200 to-orange-300 dark:from-orange-800 dark:to-orange-900 rounded-lg transform rotate-12 opacity-60"></div>
-                <div className="absolute inset-2 bg-gradient-to-br from-pink-200 to-pink-300 dark:from-pink-800 dark:to-pink-900 rounded-lg transform -rotate-6 opacity-80"></div>
-                <div className="absolute inset-4 bg-gradient-to-br from-yellow-200 to-yellow-300 dark:from-yellow-800 dark:to-yellow-900 rounded-lg"></div>
-              </div>
             </div>
           </div>
         </section>
